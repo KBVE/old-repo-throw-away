@@ -1,3 +1,7 @@
+
+::! To push to git, do "./r.sh" then include one word to describe 
+
+
 :: npm init 
     Initialized node.js
     
@@ -6,11 +10,11 @@
     
 :: npm install koa-static 
     installs static koa 
+
+:: npm i koa
     
     
-    
-    
-    
+
     
     
     
