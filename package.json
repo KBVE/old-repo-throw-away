@@ -1,0 +1,28 @@
+{
+  "name": "meme.sh",
+  "version": "0.0.1",
+  "description": "memes",
+  "main": "server.js",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-static": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KBVE/meme.sh.git"
+  },
+  "keywords": [
+    "memes"
+  ],
+  "author": "kbvememelords",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KBVE/meme.sh/issues"
+  },
+  "homepage": "https://github.com/KBVE/meme.sh#readme"
+}
