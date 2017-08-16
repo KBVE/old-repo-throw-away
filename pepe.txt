@@ -1,3 +1,7 @@
+[Unix commands to do daily. You can setup Auto/cron [https://help.ubuntu.com/community/AutomaticSecurityUpdates]  to do updates but I suggest doing it manually
+apt-get update
+apt-get upgrade
+
 
 ::! To push to git, do "./r.sh" then include one word to describe 
 
@@ -15,9 +19,11 @@
     
     
 
-    
-    
-    
+Default ->    /var/www/meme.sh
+Ensuring Workspace -> git pull
+
+Four Zero Policy -> 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded. (4 zeros).
+screen 
     
     
     
