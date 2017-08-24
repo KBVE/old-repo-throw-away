@@ -6,13 +6,16 @@ error_page 404 = @wordpress;
 
 #https://gist.github.com/c3mdigital/2765663 below @ line 37
 server { 
+
+#listen 80; listens to h.   listen [::] 80 is IPv6;
   listen 80; 
-  #above is http
+
   listen [::]:80;
+  
   server_name tta.pw meme.sh;
   #return 301 https://$host$request_uri;
   root /var/www/meme.sh/;
-  index index.html index.htm index.php 
+  index index.html index.htm index.php;
    
    	
   
