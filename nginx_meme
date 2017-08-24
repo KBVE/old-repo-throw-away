@@ -6,8 +6,9 @@ error_page 404 = @wordpress;
 
 #https://gist.github.com/c3mdigital/2765663 below @ line 37
 server { 
-  listen 80 default_server;      #IPv4
-  listen [::]:80 default_server; #IPv6
+  listen 80; 
+  #above is http
+  listen [::]:80;
   server_name tta.pw meme.sh;
   #return 301 https://$host$request_uri;
   root /var/www/meme.sh/;
@@ -24,8 +25,9 @@ server {
         log_not_found off;
     }
     
+    location / {
     try_files $uri $uri/ /index.php$is_args$args;
-  
+    }
   
   
 }
