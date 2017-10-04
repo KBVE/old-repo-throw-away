@@ -35,6 +35,83 @@
 							<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt="" /></a>
 							<h2>[#] Customer</h2>
 							<p>Dynatables for the Customers</p>
+							
+							<!-- Data  -->
+							<div class="dynatable-demo">
+							<div id="search-function-example-price-filter" style="float: left; margin-bottom: 1em;">
+							  Max Price:
+							  $<input id="max-price" type=number step=1000 />
+							</div>
+							<table id="search-function-example" class="table table-bordered">
+							  <thead>
+							    <tr>
+							      <th>Make</th>
+							      <th>Model</th>
+							      <th>Year</th>
+							      <th>Price</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>Volkswagen</td>
+							      <td>Jetta Wolfsburg</td>
+							      <td>2008</td>
+							      <td>11,000</td>
+							    </tr>
+							    <tr>
+							      <td>Ford</td>
+							      <td>Focus</td>
+							      <td>2013</td>
+							      <td>20,000</td>
+							    </tr>
+							    <tr>
+							      <td>Ford</td>
+							      <td>Escape</td>
+							      <td>2001</td>
+							      <td>4,000</td>
+							    </tr>
+							    <tr>
+							      <td>Mini</td>
+							      <td>Cooper</td>
+							      <td>2001</td>
+							      <td>8,500</td>
+							    </tr>
+							    <tr>
+							      <td>Ford</td>
+							      <td>Focus SVT</td>
+							      <td>2003</td>
+							      <td>9,000</td>
+							    </tr>
+							  </tbody>
+							</table>
+							</div>
+															
+								<script>
+								(function() {
+								  $('#search-function-example')
+								    .bind('dynatable:init', function(e, dynatable) {
+								      dynatable.queries.functions['max-price'] = function(record, queryValue) {
+								        return parseFloat(record.price.replace(/,/,'')) <= parseFloat(queryValue);
+								      };
+								    })
+								    .dynatable({
+								      features: {
+								        paginate: false,
+								        recordCount: false,
+								        sorting: false,
+								        search: false
+								      },
+								      inputs: {
+								        queries: $('#max-price')
+								      }
+								    });
+								})();
+								</script>
+
+
+							
+							
+							
 						</article>
 						<article class="thumb">
 							<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt="" /></a>
@@ -144,6 +221,9 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			
+			<script src="assets/jspkg-archive/jquery.dynatable.js"></script>
+			
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
