@@ -1,38 +1,48 @@
+
 # Basic Default 80
 # more examples https://www.nginx.com/resources/wiki/start/topics/examples/full/
 
 error_page 404 = @wordpress;
-	log_not_found off;
+        log_not_found off;
 
 #https://gist.github.com/c3mdigital/2765663 below @ line 37
-server { 
+server {
 
-#listen 80; listens to IPv4.   listen [::] 80 is IPv6;
-  listen 80; 
+#listen 80; listens to h.   listen [::] 80 is IPv6;
+  listen 80;
 
   listen [::]:80;
-  
+
   server_name tta.pw meme.sh;
   #return 301 https://$host$request_uri;
   root /var/www/meme.sh/;
   index index.html index.htm index.php;
-   
-   	
-  
-   
-  
+
+
+
+
+
     location = /favicon.ico { log_not_found off; access_log off; }
     location = /robots.txt { log_not_found off; access_log off; allow all; }
     location ~* \.(css|gif|ico|jpeg|jpg|js|png)$ {
         expires max;
         log_not_found off;
     }
-    
+
+    location ~ \.(hh|php)$ {
+    fastcgi_keep_conn on;
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+
+
     location / {
-    try_files $uri $uri/ /index.html$is_args$args; /index.php$is_args$args;
+    try_files $uri $uri/ /index.php$is_args$args;
     }
-  
-  
+
+
 }
 
 # Reference -> https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04
@@ -41,4 +51,10 @@ server {
 
 
 
-# Basic Default 443 
+# Basic Default 443
+
+
+
+
+
+
