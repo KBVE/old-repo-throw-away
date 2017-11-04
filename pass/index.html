@@ -1,28 +1,7 @@
 
 <html>
     <head>
-        <script>
-            var myApp = angular.module("myapp", []);
-            myApp.controller("PasswordController", function($scope) {
-                var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-                var mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
-                $scope.passwordStrength = {
-                    "float": "left",
-                    "width": "100px",
-                    "height": "25px",
-                    "margin-left": "5px"
-                };
-                $scope.analyze = function(value) {
-                    if(strongRegex.test(value)) {
-                        $scope.passwordStrength["background-color"] = "green";
-                    } else if(mediumRegex.test(value)) {
-                        $scope.passwordStrength["background-color"] = "orange";
-                    } else {
-                        $scope.passwordStrength["background-color"] = "red";
-                    }
-                };
-            });
-        </script>
+       
     </head>
     <body ng-app="myapp">
         <div ng-controller="PasswordController">
@@ -288,4 +267,26 @@ Ac=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){if(e
 e.$validators.maxlength=function(a,c){return 0>f||e.$isEmpty(c)||c.length<=f}}}}},Cc=function(){return{restrict:"A",require:"?ngModel",link:function(a,c,d,e){if(e){var f=0;d.$observe("minlength",function(a){f=aa(a)||0;e.$validate()});e.$validators.minlength=function(a,c){return e.$isEmpty(c)||c.length>=f}}}}};Q.angular.bootstrap?console.log("WARNING: Tried to load angular more than once."):(Nd(),Pd(ca),A(W).ready(function(){Jd(W,uc)}))})(window,document);!window.angular.$$csp()&&window.angular.element(document).find("head").prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}</style>');
 //# sourceMappingURL=angular.min.js.map
 </script>
+ <script>
+            var myApp = angular.module("myapp", []);
+            myApp.controller("PasswordController", function($scope) {
+                var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+                var mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+                $scope.passwordStrength = {
+                    "float": "left",
+                    "width": "100px",
+                    "height": "25px",
+                    "margin-left": "5px"
+                };
+                $scope.analyze = function(value) {
+                    if(strongRegex.test(value)) {
+                        $scope.passwordStrength["background-color"] = "green";
+                    } else if(mediumRegex.test(value)) {
+                        $scope.passwordStrength["background-color"] = "orange";
+                    } else {
+                        $scope.passwordStrength["background-color"] = "red";
+                    }
+                };
+            });
+        </script>
 </html>
