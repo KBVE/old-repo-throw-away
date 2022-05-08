@@ -8,9 +8,9 @@
 
 ## 2017/2019 (old repos - 1st/2nd instance)
 * We were running a penta lxc container system with nodejs/koa/nginx as the backend.
-** LXC1 - Nginx Reverse Proxy / Firewall
-** LXC2 - NodeJS Blog - Koa/Socket
-** LXC3 - Static File Host - Handled all the images, css, js files.
-** LXC4 - Database - MariaDB
-** LXC5 - Debian - Backup Solution/Manager
+- LXC1 - Nginx Reverse Proxy / Firewall
+- LXC2 - NodeJS Blog - Koa/Socket
+- LXC3 - Static File Host - Handled all the images, css, js files.
+- LXC4 - Database - MariaDB
+- LXC5 - Debian - Backup Solution/Manager
 
